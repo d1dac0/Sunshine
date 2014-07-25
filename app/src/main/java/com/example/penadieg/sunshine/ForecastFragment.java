@@ -30,9 +30,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by penadieg on 22/07/2014.
@@ -66,7 +64,8 @@ public class ForecastFragment extends Fragment {
     private void UpdateWeather() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String Location = prefs.getString(getString(R.string.pref_location_key),getString(R.string.pref_location_default));
-        new FetchWeatherTask().execute(Location);
+        String Units = prefs.getString(getString(R.string.pref_units_key),getString(R.string.pref_units_default));
+        new FetchWeatherTask().execute(Location,Units);
     }
 
     private ArrayAdapter<String> mForecastAdapter;
@@ -158,7 +157,7 @@ public class ForecastFragment extends Fragment {
                 builder.scheme("http").authority("api.openweathermap.org").appendPath("data").appendPath("2.5").appendPath("forecast").appendPath("daily")
                         .appendQueryParameter(QUERY_PARAM, params[0])
                         .appendQueryParameter(FORMAT_PARAM, format)
-                        .appendQueryParameter(UNITS_PARAM, units)
+                        .appendQueryParameter(UNITS_PARAM, params[1])
                         .appendQueryParameter(DAYS_PARAM, Integer.toString(numeroDias)).build();
 
                 String myUrl = builder.toString();
