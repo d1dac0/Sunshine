@@ -6,9 +6,19 @@
     <string name="action_settings">Settings</string>
     <string name="action_refresh">Refresh</string>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_settings">Settings</string>
+
     <string name="pref_location_label">Location</string>
     <string name="pref_location_key">location</string>
     <string name="pref_location_default">Medellin</string>
-    <string name="title_activity_settings">Settings</string>
+
+    <string name="pref_unit_key">units</string>
+    <string name="pref_unit_metric">metric</string>
+    <string name="pref_unit_imperial">imperial</string>
+    <string name="pref_unit_label">Temperature units</string>
+
+    <string name="action_map">Map Location</string>
+    <string name="action_share">Share</string>
+
 
 </resources>
