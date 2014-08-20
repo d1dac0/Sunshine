@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,7 +16,38 @@ import android.view.MenuItem;
 public class MainActivity extends ActionBarActivity {
 
     @Override
+    protected void onPause(){
+        super.onPause();
+        Log.v("onPause", "");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.v("onResume", "");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.v("onStop", "");
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.v("onStart", "");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.v("onDestroy", "");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.v("onCreate", "");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
