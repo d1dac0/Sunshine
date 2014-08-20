@@ -1,10 +1,10 @@
 /**
  * Created by penadieg on 31/07/2014.
  */
-
+package com.example.penadieg.sunshine.data;
 
 import android.provider.BaseColumns;
-package com.example.penadieg.sunshine.data;
+
 
 /**
  * Defines table and column names for the weather database.
@@ -12,6 +12,12 @@ package com.example.penadieg.sunshine.data;
 public class WeatherContract {
 
     public static final class LocationEntry implements BaseColumns{
+
+        public static final String TABLE_NAME = "location";
+        public static final String COLUMN_LOCATION_SETTING = "location_setting";
+        public static final String COLUMN_CITY_NAME = "city_name";
+        public static final String COLUMN_COORD_LAT = "coord_lat";
+        public static final String COLUMN_COORD_LONG = "coord_long";
 
     }
     /* Inner class that defines the table contents of the weather table */
